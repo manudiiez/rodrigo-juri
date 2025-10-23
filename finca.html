@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finca Los Álamos - Luján de Cuyo, Mendoza | Fincas Mendoza</title>
+    <meta name="description" content="Finca productiva de 42 hectáreas en Luján de Cuyo. Viñedos premium, riego por goteo, energía trifásica. USD 18.500/ha.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bordeaux: #800020;
+            --bordeaux-light: #a0002a;
+            --bordeaux-dark: #600018;
+        }
+        
+        .text-bordeaux { color: var(--bordeaux); }
+        .bg-bordeaux { background-color: var(--bordeaux); }
+        .border-bordeaux { border-color: var(--bordeaux); }
+        .hover\:bg-bordeaux:hover { background-color: var(--bordeaux); }
+        .hover\:bg-bordeaux-light:hover { background-color: var(--bordeaux-light); }
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item {
+            min-width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(45deg, #f1f3f4, #e8eaed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #6b7280;
+            border-radius: 12px;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .gallery-nav:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-nav.prev { left: 16px; }
+        .gallery-nav.next { right: 16px; }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .gallery-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        .gallery-dot.active {
+            background: var(--bordeaux);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <nav class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="text-2xl font-bold text-bordeaux">Fincas Mendoza</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#resumen" class="text-gray-600 hover:text-bordeaux transition-colors">Resumen</a>
+                    <a href="#ficha-tecnica" class="text-gray-600 hover:text-bordeaux transition-colors">Ficha Técnica</a>
+                    <a href="#ubicacion" class="text-gray-600 hover:text-bordeaux transition-colors">Ubicación</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-bordeaux transition-colors">Contacto</a>
+                    <a href="https://wa.me/5492614123456" target="_blank" rel="noopener noreferrer" 
+                       class="bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors">
+                        WhatsApp
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="#resumen" class="block text-gray-600 hover:text-bordeaux transition-colors" onclick="closeMobileMenu()">Resumen</a>
+                    <a href="#ficha-tecnica" class="block text-gray-600 hover:text-bordeaux transition-colors" onclick="closeMobileMenu()">Ficha Técnica</a>
+                    <a href="#ubicacion" class="block text-gray-600 hover:text-bordeaux transition-colors" onclick="closeMobileMenu()">Ubicación</a>
+                    <a href="#contacto" class="block text-gray-600 hover:text-bordeaux transition-colors" onclick="closeMobileMenu()">Contacto</a>
+                    <a href="https://wa.me/5492614123456" target="_blank" rel="noopener noreferrer" 
+                       class="block bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors text-center">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+                    Finca Los Álamos
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-600 mb-8">
+                    Luján de Cuyo, Mendoza • Viñedos Premium
+                </p>
+                <a href="https://wa.me/5492614123456?text=Consulta%20por%20Finca%20Los%20Álamos" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-block bg-bordeaux text-white px-8 py-4 rounded-lg text-lg hover:bg-bordeaux-light transition-colors">
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Imágenes -->
+    <section class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="gallery-container rounded-2xl overflow-hidden">
+                <div class="gallery-track" id="galleryTrack">
+                    <div class="gallery-item">📸 Vista general de la finca</div>
+                    <div class="gallery-item">🍇 Viñedos en producción</div>
+                    <div class="gallery-item">💧 Sistema de riego por goteo</div>
+                    <div class="gallery-item">🏠 Casa principal</div>
+                    <div class="gallery-item">🏭 Galpón y sala de riego</div>
+                    <div class="gallery-item">🛣️ Acceso principal</div>
+                    <div class="gallery-item">🌄 Vista panorámica</div>
+                    <div class="gallery-item">⚡ Instalación eléctrica</div>
+                </div>
+                <button class="gallery-nav prev" onclick="previousImage()">‹</button>
+                <button class="gallery-nav next" onclick="nextImage()">›</button>
+            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
+        </div>
+    </section>
+
+    <!-- Resumen General -->
+    <section id="resumen" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Resumen General</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-bordeaux mb-2">42 ha</div>
+                    <p class="text-gray-600">Superficie total</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-bordeaux mb-2">USD 18.500</div>
+                    <p class="text-gray-600">Precio por hectárea</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-bordeaux mb-2">USD 777.000</div>
+                    <p class="text-gray-600">Valor total</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-bordeaux mb-2">950 msnm</div>
+                    <p class="text-gray-600">Altitud</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex justify-between py-3 border-b border-gray-100">
+                            <span class="text-gray-600">Aptitud productiva:</span>
+                            <span class="font-semibold">Viñedos premium / Olivos</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-100">
+                            <span class="text-gray-600">Estado actual:</span>
+                            <span class="font-semibold">En producción</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-100">
+                            <span class="text-gray-600">Acceso principal:</span>
+                            <span class="font-semibold">RP 15 + 2 km ripio</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between py-3 border-b border-gray-100">
+                            <span class="text-gray-600">Coordenadas:</span>
+                            <span class="font-semibold">-33.0162, -68.8751</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-100">
+                            <span class="text-gray-600">Distancia a Mendoza:</span>
+                            <span class="font-semibold">35 km</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-100">
+                            <span class="text-gray-600">Servicios cercanos:</span>
+                            <span class="font-semibold">5 km del centro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ficha Técnica Completa -->
+    <section id="ficha-tecnica" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Ficha Técnica Completa</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Suelo y Clima -->
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-bordeaux">Suelo y Clima</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-gray-600 text-sm">Tipo de suelo:</span>
+                                <div class="font-semibold">Franco-arcilloso</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Textura:</span>
+                                <div class="font-semibold">Equilibrada</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">pH:</span>
+                                <div class="font-semibold">7.2 (neutro)</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Materia orgánica:</span>
+                                <div class="font-semibold">2.8%</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Pendiente:</span>
+                                <div class="font-semibold">2-5% (suave)</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Drenaje:</span>
+                                <div class="font-semibold">Bueno</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Grados-día:</span>
+                                <div class="font-semibold">1.450 (ideal viñedos)</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Heladas:</span>
+                                <div class="font-semibold">Tardías (octubre)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agua y Riego -->
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-bordeaux">Agua y Riego</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-gray-600 text-sm">Derecho de agua:</span>
+                                <div class="font-semibold">1,2 l/s/ha</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Caudal total:</span>
+                                <div class="font-semibold">50 l/s</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Fuente:</span>
+                                <div class="font-semibold">Río Mendoza</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Turno de riego:</span>
+                                <div class="font-semibold">Cada 15 días</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">CE agua:</span>
+                                <div class="font-semibold">0.8 dS/m (excelente)</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">pH agua:</span>
+                                <div class="font-semibold">7.5</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Sistema de riego:</span>
+                                <div class="font-semibold">Goteo tecnificado</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Año instalación:</span>
+                                <div class="font-semibold">2018</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instalaciones -->
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-bordeaux">Instalaciones y Mejoras</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-gray-600 text-sm">Casa principal:</span>
+                                <div class="font-semibold">120 m² (3 dormitorios)</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Estado casa:</span>
+                                <div class="font-semibold">Muy bueno</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Galpón:</span>
+                                <div class="font-semibold">200 m²</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Sala de riego:</span>
+                                <div class="font-semibold">Automatizada</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Cercos:</span>
+                                <div class="font-semibold">Perimetral completo</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Caminos internos:</span>
+                                <div class="font-semibold">Consolidados</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Pozo de agua:</span>
+                                <div class="font-semibold">No (riego por canal)</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Tanque australiano:</span>
+                                <div class="font-semibold">50.000 litros</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Energía y Productividad -->
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-bordeaux">Energía y Productividad</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <span class="text-gray-600 text-sm">Tipo de energía:</span>
+                                <div class="font-semibold">Trifásica</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Potencia:</span>
+                                <div class="font-semibold">25 kW</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Transformador:</span>
+                                <div class="font-semibold">Propio</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Medidor:</span>
+                                <div class="font-semibold">Individual</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Productividad uva:</span>
+                                <div class="font-semibold">12.000 kg/ha</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Variedades:</span>
+                                <div class="font-semibold">Malbec, Cabernet</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Edad viñedos:</span>
+                                <div class="font-semibold">8-12 años</div>
+                            </div>
+                            <div>
+                                <span class="text-gray-600 text-sm">Precio uva 2024:</span>
+                                <div class="font-semibold">USD 0.45/kg</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documentación y Servicios -->
+            <div class="mt-12 grid lg:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-bordeaux">Documentación Legal</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Escritura:</span>
+                            <span class="font-semibold text-green-600">Al día</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Mensura:</span>
+                            <span class="font-semibold">2020 (actualizada)</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Planos municipales:</span>
+                            <span class="font-semibold text-green-600">Aprobados</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Impuestos:</span>
+                            <span class="font-semibold text-green-600">Al día</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Apto crédito:</span>
+                            <span class="font-semibold text-green-600">Sí</span>
+                        </div>
+                        <div class="flex justify-between py-3">
+                            <span class="text-gray-600">Inhibiciones:</span>
+                            <span class="font-semibold text-green-600">Libre</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-bordeaux">Servicios Cercanos</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Centro urbano:</span>
+                            <span class="font-semibold">5 km</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Bodegas:</span>
+                            <span class="font-semibold">3-8 km</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Cooperativa:</span>
+                            <span class="font-semibold">6 km</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Escuela:</span>
+                            <span class="font-semibold">4 km</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-gray-200">
+                            <span class="text-gray-600">Hospital:</span>
+                            <span class="font-semibold">12 km</span>
+                        </div>
+                        <div class="flex justify-between py-3">
+                            <span class="text-gray-600">Aeropuerto:</span>
+                            <span class="font-semibold">45 km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa/Ubicación -->
+    <section id="ubicacion" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Ubicación</h2>
+            
+            <div class="bg-white p-8 rounded-2xl">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="bg-gray-100 h-80 rounded-xl flex items-center justify-center text-gray-500 mb-6">
+                            🗺️ Mapa interactivo<br/>
+                            <span class="text-sm">Luján de Cuyo, Mendoza</span>
+                        </div>
+                        <div class="text-center text-sm text-gray-600">
+                            <p><strong>Coordenadas:</strong> -33.0162, -68.8751</p>
+                            <p><strong>Acceso:</strong> Ruta Provincial 15 + 2 km de ripio consolidado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-bordeaux">Ventajas de la ubicación</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-bordeaux rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span>Zona vitivinícola reconocida mundialmente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-bordeaux rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span>Proximidad a bodegas premium para venta de uva</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-bordeaux rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span>Acceso directo desde ruta provincial</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-bordeaux rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span>Servicios urbanos a corta distancia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-bordeaux rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span>Clima ideal para viñedos de alta gama</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8 text-gray-900">¿Interesado en esta finca?</h2>
+            <p class="text-xl text-gray-600 mb-12">
+                Solicite el informe técnico completo con análisis de suelo, agua y documentación legal, 
+                o programe una visita para conocer la propiedad en detalle.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                <a href="https://wa.me/5492614123456?text=Solicito%20informe%20técnico%20completo%20de%20Finca%20Los%20Álamos" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="bg-bordeaux text-white px-8 py-4 rounded-lg text-lg hover:bg-bordeaux-light transition-colors">
+                    Solicitar informe técnico
+                </a>
+                <a href="https://wa.me/5492614123456?text=Quiero%20programar%20visita%20a%20Finca%20Los%20Álamos" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="border-2 border-bordeaux text-bordeaux px-8 py-4 rounded-lg text-lg hover:bg-bordeaux hover:text-white transition-colors">
+                    Programar visita
+                </a>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl">
+                <h3 class="text-xl font-semibold mb-4 text-bordeaux">Contacto directo</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-gray-600">
+                    <div>
+                        <div class="text-2xl mb-2">📱</div>
+                        <p class="font-semibold">+54 9 261 412-3456</p>
+                        <p class="text-sm">WhatsApp disponible</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl mb-2">✉️</div>
+                        <p class="font-semibold">martin@fincasmendoza.com</p>
+                        <p class="text-sm">Respuesta en 24hs</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl mb-2">👨‍💼</div>
+                        <p class="font-semibold">Martín Rodriguez</p>
+                        <p class="text-sm">Ing. Agrónomo - Martillero</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flotante -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/5492614123456?text=Consulta%20por%20Finca%20Los%20Álamos" 
+           target="_blank" rel="noopener noreferrer"
+           class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-bordeaux mb-4">Fincas Mendoza</div>
+                    <p class="text-gray-400">Asesoría integral en propiedades rurales de Mendoza y Cuyo</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>+54 9 261 412-3456</p>
+                        <p>martin@fincasmendoza.com</p>
+                        <p>Mendoza, Argentina</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>CCPI MZA 12.345</p>
+                        <p>Martillero Público</p>
+                        <p>Ingeniero Agrónomo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Fincas Mendoza. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery functionality
+        let currentImage = 0;
+        const totalImages = 8;
+
+        function initGallery() {
+            const dotsContainer = document.getElementById('galleryDots');
+            for (let i = 0; i < totalImages; i++) {
+                const dot = document.createElement('div');
+                dot.className = `gallery-dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToImage(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateGallery() {
+            const track = document.getElementById('galleryTrack');
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            track.style.transform = `translateX(-${currentImage * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentImage);
+            });
+        }
+
+        function nextImage() {
+            currentImage = (currentImage + 1) % totalImages;
+            updateGallery();
+        }
+
+        function previousImage() {
+            currentImage = (currentImage - 1 + totalImages) % totalImages;
+            updateGallery();
+        }
+
+        function goToImage(index) {
+            currentImage = index;
+            updateGallery();
+        }
+
+        // Auto-advance gallery
+        setInterval(nextImage, 5000);
+
+        // Initialize gallery on page load
+        document.addEventListener('DOMContentLoaded', initGallery);
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'990b1a2326a48bbf',t:'MTc2MDgyMjY2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

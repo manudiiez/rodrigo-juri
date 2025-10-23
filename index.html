@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fincas en venta en Mendoza | Asesor técnico especializado</title>
+    <meta
+      name="description"
+      content="Asesoría integral para comprar fincas productivas en Mendoza y Cuyo. Análisis técnico, due diligence y acompañamiento total."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bordeaux: #800020;
+        --bordeaux-light: #a0002a;
+        --bordeaux-dark: #600018;
+      }
+
+      .text-bordeaux {
+        color: var(--bordeaux);
+      }
+      .bg-bordeaux {
+        background-color: var(--bordeaux);
+      }
+      .border-bordeaux {
+        border-color: var(--bordeaux);
+      }
+      .hover\:bg-bordeaux:hover {
+        background-color: var(--bordeaux);
+      }
+      .hover\:bg-bordeaux-light:hover {
+        background-color: var(--bordeaux-light);
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .property-card {
+        transition: all 0.3s ease;
+      }
+
+      .property-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background: white;
+        border-radius: 12px;
+        max-width: 90vw;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .property-image {
+        background: linear-gradient(45deg, #f1f3f4, #e8eaed);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50"
+    >
+      <nav class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="text-2xl font-bold text-bordeaux">Fincas Mendoza</div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#inicio"
+              class="text-gray-600 hover:text-bordeaux transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="#propiedades"
+              class="text-gray-600 hover:text-bordeaux transition-colors"
+              >Propiedades</a
+            >
+            <a
+              href="#contacto"
+              class="text-gray-600 hover:text-bordeaux transition-colors"
+              >Contacto</a
+            >
+            <a
+              href="https://wa.me/5492614123456"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="hero-gradient min-h-screen flex items-center pt-16"
+    >
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1
+            class="text-5xl lg:text-7xl font-bold mb-8 text-gray-900 leading-tight"
+          >
+            Fincas productivas en
+            <span class="text-bordeaux">Mendoza</span>
+          </h1>
+          <p class="text-xl lg:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
+            Asesoría integral con análisis técnico, due diligence completo y
+            acompañamiento total en la compra de propiedades rurales
+          </p>
+
+          <!-- Credenciales -->
+          <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-bordeaux mb-2">+10 años</div>
+              <p class="text-gray-600">experiencia en mercado rural</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-bordeaux mb-2">100%</div>
+              <p class="text-gray-600">informes técnicos verificables</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-bordeaux mb-2">CCPI</div>
+              <p class="text-gray-600">martillero matriculado</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a
+              href="#propiedades"
+              class="bg-bordeaux text-white px-8 py-4 rounded-lg text-lg hover:bg-bordeaux-light transition-colors"
+            >
+              Ver propiedades disponibles
+            </a>
+            <a
+              href="#contacto"
+              class="border-2 border-bordeaux text-bordeaux px-8 py-4 rounded-lg text-lg hover:bg-bordeaux hover:text-white transition-colors"
+            >
+              Consultar asesoría
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breve presentación -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-8 text-gray-900">
+            Conectamos inversores con las mejores fincas de Cuyo
+          </h2>
+          <p class="text-xl text-gray-600 mb-12">
+            Soy <strong>Martín Rodriguez</strong>, ingeniero agrónomo y
+            martillero público. Trabajo con métricas claras, análisis técnico
+            profundo y total transparencia para que tomes decisiones informadas
+            en el mercado rural.
+          </p>
+          <div class="flex flex-wrap justify-center gap-8 text-gray-600">
+            <div class="flex items-center">
+              <span class="w-2 h-2 bg-bordeaux rounded-full mr-3"></span>
+              Análisis de suelo y agua
+            </div>
+            <div class="flex items-center">
+              <span class="w-2 h-2 bg-bordeaux rounded-full mr-3"></span>
+              Due diligence completo
+            </div>
+            <div class="flex items-center">
+              <span class="w-2 h-2 bg-bordeaux rounded-full mr-3"></span>
+              Acompañamiento hasta escritura
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Propiedades destacadas -->
+    <section id="propiedades" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
+            Propiedades Disponibles
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Selección curada de fincas productivas con análisis técnico completo
+            y documentación verificada
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Propiedad 1 -->
+          <div
+            class="property-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="property-image h-80 rounded-t-2xl">
+              <img
+                class="w-full h-full object-cover"
+                src="./public/finca1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                    Finca Los Álamos
+                  </h3>
+                  <p class="text-gray-600">Luján de Cuyo • 42 hectáreas</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-bordeaux">
+                    USD 18.500/ha
+                  </div>
+                  <div class="text-sm text-gray-500">Total: USD 777.000</div>
+                </div>
+              </div>
+
+              <div class="space-y-3 mb-6 text-gray-600">
+                <div class="flex justify-between">
+                  <span>Aptitud:</span>
+                  <span className="font-medium">Viñedos premium / Olivos</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Riego:</span>
+                  <span className="font-medium">Goteo tecnificado</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Energía:</span>
+                  <span className="font-medium">Trifásica 25 kW</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="finca.html"
+                  class="flex-1 bg-bordeaux text-white py-3 rounded-lg hover:bg-bordeaux-light transition-colors btn-view-full text-center"
+                >
+                  Ver finca completa
+                </a>
+                <a
+                  href="https://wa.me/5492614123456?text=Consulta%20por%20Finca%20Los%20Álamos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-6 py-3 border-2 border-bordeaux text-bordeaux rounded-lg hover:bg-bordeaux hover:text-white transition-colors"
+                >
+                  Consultar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Propiedad 2 -->
+          <div
+            class="property-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="property-image h-80 rounded-t-2xl">
+              <img
+                class="w-full h-full object-cover"
+                src="./public/finca2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                    Estancia La Merced
+                  </h3>
+                  <p class="text-gray-600">San Rafael • 120 hectáreas</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-bordeaux">
+                    USD 9.800/ha
+                  </div>
+                  <div class="text-sm text-gray-500">Total: USD 1.176.000</div>
+                </div>
+              </div>
+
+              <div class="space-y-3 mb-6 text-gray-600">
+                <div class="flex justify-between">
+                  <span>Aptitud:</span>
+                  <span className="font-medium">Frutales / Ganadería</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Riego:</span>
+                  <span className="font-medium">Manto + aspersión</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Energía:</span>
+                  <span className="font-medium">Monofásica 15 kW</span>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="finca.html"
+                  class="flex-1 bg-bordeaux text-white py-3 rounded-lg hover:bg-bordeaux-light transition-colors btn-view-full text-center"
+                >
+                  Ver finca completa
+                </a>
+                <a
+                  href="https://wa.me/5492614123456?text=Consulta%20por%20Estancia%20La%20Merced"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-6 py-3 border-2 border-bordeaux text-bordeaux rounded-lg hover:bg-bordeaux hover:text-white transition-colors"
+                >
+                  Consultar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Propiedad 3 -->
+          <div
+            class="property-card bg-white rounded-2xl overflow-hidden shadow-lg lg:col-span-2"
+          >
+            <div class="grid lg:grid-cols-2">
+              <div class="property-image h-80 lg:h-full">
+                <img
+                  class="w-full h-full object-cover"
+                  src="https://ruraldelosandes.com.ar/andeshome/wp-content/uploads/2023/02/IMG_8514-800x441.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="p-8">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                      Campo El Retiro
+                    </h3>
+                    <p class="text-gray-600">Tunuyán • 65 hectáreas</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-2xl font-bold text-bordeaux">
+                      USD 15.200/ha
+                    </div>
+                    <div class="text-sm text-gray-500">Total: USD 988.000</div>
+                  </div>
+                </div>
+
+                <div class="space-y-3 mb-6 text-gray-600">
+                  <div class="flex justify-between">
+                    <span>Aptitud:</span>
+                    <span className="font-medium"
+                      >Viñedo de altura / Nogales</span
+                    >
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Riego:</span>
+                    <span className="font-medium">Goteo + pozo 45 m³/h</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Energía:</span>
+                    <span className="font-medium">Trifásica 30 kW</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Altitud:</span>
+                    <span className="font-medium">1.100 msnm</span>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <a
+                    href="finca.html"
+                    class="flex-1 bg-bordeaux text-white py-3 rounded-lg hover:bg-bordeaux-light transition-colors btn-view-full text-center"
+                  >
+                    Ver finca completa
+                  </a>
+                  <a
+                    href="https://wa.me/5492614123456?text=Consulta%20por%20Campo%20El%20Retiro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-6 py-3 border-2 border-bordeaux text-bordeaux rounded-lg hover:bg-bordeaux hover:text-white transition-colors"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-8 text-gray-900">
+          ¿Listo para invertir?
+        </h2>
+        <p class="text-xl text-gray-600 mb-12">
+          Conversemos sobre tus objetivos de inversión. Te acompaño en todo el
+          proceso con análisis técnico y transparencia total.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <a
+            href="https://wa.me/5492614123456"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-bordeaux text-white px-8 py-4 rounded-lg text-lg hover:bg-bordeaux-light transition-colors"
+          >
+            Consultar por WhatsApp
+          </a>
+          <a
+            href="mailto:martin@fincasmendoza.com"
+            class="border-2 border-bordeaux text-bordeaux px-8 py-4 rounded-lg text-lg hover:bg-bordeaux hover:text-white transition-colors"
+          >
+            Enviar email
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 text-gray-600">
+          <div>
+            <div class="text-bordeaux text-2xl mb-2">📱</div>
+            <p>+54 9 261 412-3456</p>
+          </div>
+          <div>
+            <div class="text-bordeaux text-2xl mb-2">✉️</div>
+            <p>martin@fincasmendoza.com</p>
+          </div>
+          <div>
+            <div class="text-bordeaux text-2xl mb-2">📍</div>
+            <p>Mendoza, Argentina</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modales -->
+    <div id="modal1" class="modal">
+      <div class="modal-content w-full max-w-4xl m-4">
+        <div class="p-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Finca Los Álamos</h2>
+            <button
+              onclick="closeModal('modal1')"
+              class="text-gray-400 hover:text-gray-600 text-3xl"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8">
+            <div>
+              <div
+                class="bg-gray-100 h-64 rounded-lg mb-6 flex items-center justify-center text-6xl"
+              >
+                🍇
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Resumen financiero</h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Superficie:</span>
+                    <span class="font-semibold">42 hectáreas</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Precio por hectárea:</span>
+                    <span class="font-semibold text-bordeaux">USD 18.500</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-3">
+                    <span class="text-lg">Valor total:</span>
+                    <span class="text-xl font-bold text-bordeaux"
+                      >USD 777.000</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="https://wa.me/5492614123456?text=Solicito%20informe%20técnico%20Finca%20Los%20Álamos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 bg-bordeaux text-white py-3 rounded-lg text-center hover:bg-bordeaux-light transition-colors"
+                >
+                  Solicitar informe técnico
+                </a>
+                <a
+                  href="https://wa.me/5492614123456?text=Quiero%20coordinar%20visita%20Finca%20Los%20Álamos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 border-2 border-bordeaux text-bordeaux py-3 rounded-lg text-center hover:bg-bordeaux hover:text-white transition-colors"
+                >
+                  Coordinar visita
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Datos técnicos</h3>
+              <div class="space-y-4 text-sm">
+                <div class="grid grid-cols-2 gap-4">
+                  <div><strong>Ubicación:</strong> Luján de Cuyo</div>
+                  <div><strong>Altitud:</strong> 950 msnm</div>
+                  <div><strong>Suelo:</strong> Franco-arcilloso</div>
+                  <div><strong>pH:</strong> 7.2</div>
+                  <div><strong>Materia orgánica:</strong> 2.8%</div>
+                  <div><strong>Pendiente:</strong> 2-5%</div>
+                  <div><strong>Derecho de agua:</strong> 1,2 l/s/ha</div>
+                  <div><strong>Caudal:</strong> 50 l/s</div>
+                  <div><strong>Riego:</strong> Goteo (2018)</div>
+                  <div><strong>Energía:</strong> Trifásica 25 kW</div>
+                  <div><strong>Aptitud:</strong> Viñedos premium</div>
+                  <div><strong>Casa:</strong> 120 m² (3 dorm)</div>
+                  <div><strong>Galpón:</strong> 200 m²</div>
+                  <div><strong>Acceso:</strong> RP 15 + 2 km ripio</div>
+                  <div><strong>Productividad:</strong> 12.000 kg/ha</div>
+                  <div><strong>Escritura:</strong> Al día</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content w-full max-w-4xl m-4">
+        <div class="p-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Estancia La Merced</h2>
+            <button
+              onclick="closeModal('modal2')"
+              class="text-gray-400 hover:text-gray-600 text-3xl"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8">
+            <div>
+              <div
+                class="bg-gray-100 h-64 rounded-lg mb-6 flex items-center justify-center text-6xl"
+              >
+                🐄
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Resumen financiero</h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Superficie:</span>
+                    <span class="font-semibold">120 hectáreas</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Precio por hectárea:</span>
+                    <span class="font-semibold text-bordeaux">USD 9.800</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-3">
+                    <span class="text-lg">Valor total:</span>
+                    <span class="text-xl font-bold text-bordeaux"
+                      >USD 1.176.000</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="https://wa.me/5492614123456?text=Solicito%20informe%20técnico%20Estancia%20La%20Merced"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 bg-bordeaux text-white py-3 rounded-lg text-center hover:bg-bordeaux-light transition-colors"
+                >
+                  Solicitar informe técnico
+                </a>
+                <a
+                  href="https://wa.me/5492614123456?text=Quiero%20coordinar%20visita%20Estancia%20La%20Merced"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 border-2 border-bordeaux text-bordeaux py-3 rounded-lg text-center hover:bg-bordeaux hover:text-white transition-colors"
+                >
+                  Coordinar visita
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Datos técnicos</h3>
+              <div class="space-y-4 text-sm">
+                <div class="grid grid-cols-2 gap-4">
+                  <div><strong>Ubicación:</strong> San Rafael</div>
+                  <div><strong>Altitud:</strong> 720 msnm</div>
+                  <div><strong>Suelo:</strong> Franco-arenoso</div>
+                  <div><strong>pH:</strong> 7.8</div>
+                  <div><strong>Materia orgánica:</strong> 1.9%</div>
+                  <div><strong>Pendiente:</strong> 0-2%</div>
+                  <div><strong>Derecho de agua:</strong> 0,8 l/s/ha</div>
+                  <div><strong>Caudal:</strong> 96 l/s</div>
+                  <div><strong>Riego:</strong> Manto tradicional</div>
+                  <div><strong>Energía:</strong> Monofásica 15 kW</div>
+                  <div><strong>Aptitud:</strong> Frutales/Ganadería</div>
+                  <div><strong>Casa:</strong> 180 m² (4 dorm)</div>
+                  <div><strong>Galpón:</strong> 400 m²</div>
+                  <div><strong>Acceso:</strong> RN 143 + 8 km ripio</div>
+                  <div><strong>Productividad:</strong> 25 qq/ha alfalfa</div>
+                  <div><strong>Escritura:</strong> Al día</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content w-full max-w-4xl m-4">
+        <div class="p-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Campo El Retiro</h2>
+            <button
+              onclick="closeModal('modal3')"
+              class="text-gray-400 hover:text-gray-600 text-3xl"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8">
+            <div>
+              <div
+                class="bg-gray-100 h-64 rounded-lg mb-6 flex items-center justify-center text-6xl"
+              >
+                🐄
+              </div>
+
+              <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Resumen financiero</h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between">
+                    <span>Superficie:</span>
+                    <span class="font-semibold">65 hectáreas</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Precio por hectárea:</span>
+                    <span class="font-semibold text-bordeaux">USD 15.200</span>
+                  </div>
+                  <div class="flex justify-between border-t pt-3">
+                    <span class="text-lg">Valor total:</span>
+                    <span class="text-xl font-bold text-bordeaux"
+                      >USD 988.000</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="https://wa.me/5492614123456?text=Solicito%20informe%20técnico%20Campo%20El%20Retiro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 bg-bordeaux text-white py-3 rounded-lg text-center hover:bg-bordeaux-light transition-colors"
+                >
+                  Solicitar informe técnico
+                </a>
+                <a
+                  href="https://wa.me/5492614123456?text=Quiero%20coordinar%20visita%20Campo%20El%20Retiro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 border-2 border-bordeaux text-bordeaux py-3 rounded-lg text-center hover:bg-bordeaux hover:text-white transition-colors"
+                >
+                  Coordinar visita
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Datos técnicos</h3>
+              <div class="space-y-4 text-sm">
+                <div class="grid grid-cols-2 gap-4">
+                  <div><strong>Ubicación:</strong> Tunuyán</div>
+                  <div><strong>Altitud:</strong> 1.100 msnm</div>
+                  <div><strong>Suelo:</strong> Franco</div>
+                  <div><strong>pH:</strong> 7.0</div>
+                  <div><strong>Materia orgánica:</strong> 3.2%</div>
+                  <div><strong>Pendiente:</strong> 3-8%</div>
+                  <div><strong>Derecho de agua:</strong> 1,0 l/s/ha</div>
+                  <div><strong>Caudal pozo:</strong> 45 m³/h</div>
+                  <div><strong>Riego:</strong> Goteo + pozo</div>
+                  <div><strong>Energía:</strong> Trifásica 30 kW</div>
+                  <div><strong>Aptitud:</strong> Viñedo altura/Nogales</div>
+                  <div><strong>Casa:</strong> 90 m² (2 dorm)</div>
+                  <div><strong>Galpón:</strong> 150 m²</div>
+                  <div><strong>Acceso:</strong> RP 89 + 4 km ripio</div>
+                  <div><strong>Productividad:</strong> 2.500 kg/ha nuez</div>
+                  <div><strong>Escritura:</strong> Al día</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <div class="text-2xl font-bold text-bordeaux mb-4">
+              Fincas Mendoza
+            </div>
+            <p class="text-gray-400">
+              Asesoría integral en propiedades rurales de Mendoza y Cuyo
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contacto</h4>
+            <div class="space-y-2 text-gray-400">
+              <p>+54 9 261 412-3456</p>
+              <p>martin@fincasmendoza.com</p>
+              <p>Mendoza, Argentina</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <div class="space-y-2 text-gray-400">
+              <p>CCPI MZA 12.345</p>
+              <p>Martillero Público</p>
+              <p>Ingeniero Agrónomo</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2024 Fincas Mendoza. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Modal functionality
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal when clicking outside
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("modal")) {
+          e.target.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+    
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'990b0a0b516217d3',t:'MTc2MDgyMjAwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

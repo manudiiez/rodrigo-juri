@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fincas Mendoza - Propiedades Rurales Seleccionadas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #000000;
+        background-color: #ffffff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      .header {
+        background: #ffffff;
+        padding: 20px 0;
+        border-bottom: 1px solid #e0e0e0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 600;
+        color: #000000;
+        text-decoration: none;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: #6b6b6b;
+        font-weight: 400;
+        transition: color 0.3s ease;
+      }
+
+      .nav-menu a:hover {
+        color: #000000;
+      }
+
+      .btn-whatsapp {
+        background: #800020;
+        color: #ffffff !important;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn-whatsapp:hover {
+        background: #600018;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(
+            rgba(245, 246, 247, 0.8),
+            rgba(245, 246, 247, 0.8)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23F5F6F7" width="1200" height="400"/><path fill="%23E0E0E0" opacity="0.3" d="M0,200 Q300,150 600,200 T1200,200 L1200,400 L0,400 Z"/></svg>');
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .hero-brand h1 {
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #800020;
+      }
+
+      .hero-tagline {
+        font-size: 22px;
+        color: #000000;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .hero-description {
+        font-size: 18px;
+        color: #6b6b6b;
+        margin-bottom: 40px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-credentials {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 40px;
+      }
+
+      .credential {
+        text-align: center;
+      }
+
+      .credential-number {
+        display: block;
+        font-size: 32px;
+        font-weight: 700;
+        color: #800020;
+        margin-bottom: 4px;
+      }
+
+      .credential-text {
+        font-size: 14px;
+        color: #6b6b6b;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .btn-primary {
+        background: #800020;
+        color: #ffffff;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn-primary:hover {
+        background: #600018;
+      }
+
+      /* Finca Sections */
+      .finca-section {
+        padding: 100px 0;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .finca-section:nth-child(even) {
+        background: #f5f6f7;
+      }
+
+      .finca-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .finca-image {
+        width: 100%;
+        height: 500px;
+        background: #e0e0e0;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b6b6b;
+        font-size: 18px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .finca-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .finca-info {
+        padding: 20px 0;
+      }
+
+      .finca-info h3 {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #000000;
+      }
+
+      .finca-location {
+        color: #800020;
+        font-size: 18px;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+
+      .finca-description {
+        color: #000000;
+        margin-bottom: 40px;
+        line-height: 1.8;
+        font-size: 16px;
+      }
+
+      .finca-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+      }
+
+      .finca-section:nth-child(even) .finca-details {
+        background: #f5f6f7;
+        border: 1px solid #e0e0e0;
+      }
+
+      .detail-item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .detail-label {
+        font-size: 12px;
+        color: #6b6b6b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 8px;
+      }
+
+      .detail-value {
+        font-size: 18px;
+        color: #000000;
+        font-weight: 700;
+      }
+
+      .detail-value.highlight {
+        color: #800020;
+        font-size: 20px;
+      }
+
+      /* Asesor Section */
+      .asesor-section {
+        padding: 80px 0;
+        background: #f5f6f7;
+        text-align: center;
+      }
+
+      .asesor-section h2 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #000000;
+      }
+
+      .asesor-section p {
+        font-size: 18px;
+        color: #6b6b6b;
+        margin-bottom: 50px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .feature {
+        text-align: center;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: #800020;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: #ffffff;
+        font-size: 24px;
+      }
+
+      .feature h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 10px;
+      }
+
+      .feature p {
+        font-size: 14px;
+        color: #6b6b6b;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 0;
+      }
+
+      .contact-content {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact-section h2 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #000000;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .form-group label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #000000;
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 12px 16px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        font-size: 16px;
+        font-family: "Inter", sans-serif;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #800020;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .whatsapp-link {
+        color: #6b6b6b;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 20px;
+        display: inline-block;
+      }
+
+      .whatsapp-link:hover {
+        color: #800020;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-menu {
+          gap: 20px;
+        }
+
+        .hero-brand h1 {
+          font-size: 40px;
+        }
+
+        .hero-tagline {
+          font-size: 18px;
+        }
+
+        .hero-description {
+          font-size: 16px;
+        }
+
+        .hero-credentials {
+          gap: 40px;
+        }
+
+        .credential-number {
+          font-size: 28px;
+        }
+
+        .finca-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .finca-image {
+          height: 300px;
+        }
+
+        .finca-info h3 {
+          font-size: 32px;
+        }
+
+        .finca-details {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          padding: 20px;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="container">
+        <div class="nav">
+          <a href="#" class="logo">Fincas Mendoza</a>
+          <ul class="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#" class="btn-whatsapp">Consultar por WhatsApp</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-brand">
+          <h1>Fincas Mendoza</h1>
+          <p class="hero-tagline">
+            Propiedades rurales seleccionadas en Mendoza y Cuyo
+          </p>
+        </div>
+        <p class="hero-description">
+          Asesoramiento técnico especializado y acompañamiento integral en
+          inversiones rurales
+        </p>
+        <div class="hero-credentials">
+          <div class="credential">
+            <span class="credential-number">+10</span>
+            <span class="credential-text">años de experiencia</span>
+          </div>
+          <div class="credential">
+            <span class="credential-number">+15</span>
+            <span class="credential-text">operaciones concretadas</span>
+          </div>
+        </div>
+        <a href="#fincas" class="btn-primary">Ver fincas disponibles</a>
+      </div>
+    </section>
+
+    <!-- Finca 1 -->
+    <section class="finca-section" id="fincas">
+      <div class="container">
+        <div class="finca-content">
+          <div class="finca-image">
+            <img class="finca-img" src="./public/finca1.jpg" alt="" />
+            <!-- <span>Imagen Finca Los Álamos</span> -->
+          </div>
+          <div class="finca-info">
+            <h3>Finca Los Álamos</h3>
+            <p class="finca-location">Luján de Cuyo, Mendoza</p>
+            <p class="finca-description">
+              Excepcional propiedad con viñedos de alta calidad en zona
+              privilegiada del distrito de Agrelo. Terroir único con suelos
+              franco-arenosos y excelente exposición solar. Ideal para inversión
+              vitivinícola premium con variedades Malbec y Cabernet Sauvignon ya
+              establecidas.
+            </p>
+            <div class="finca-details">
+              <div class="detail-item">
+                <span class="detail-label">Superficie</span>
+                <span class="detail-value">25 hectáreas</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Precio por ha</span>
+                <span class="detail-value highlight">USD 18.000</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Aptitud</span>
+                <span class="detail-value">Viñedos premium</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Riego</span>
+                <span class="detail-value">Goteo tecnificado</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Energía</span>
+                <span class="detail-value">Trifásica disponible</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Accesos</span>
+                <span class="detail-value">Ruta pavimentada</span>
+              </div>
+            </div>
+            <a href="finca.html" class="btn-primary"
+              >Ver información completa</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finca 2 -->
+    <section class="finca-section">
+      <div class="container">
+        <div class="finca-content">
+          <div class="finca-info">
+            <h3>Finca San Rafael</h3>
+            <p class="finca-location">San Rafael, Mendoza</p>
+            <p class="finca-description">
+              Propiedad mixta excepcional con olivos centenarios de variedad
+              Arauco y viñedos jóvenes de alta productividad. Ubicación
+              estratégica sobre Ruta Nacional 143 con acceso directo y excelente
+              infraestructura. Incluye galpón de 800m² y vivienda para
+              encargado.
+            </p>
+            <div class="finca-details">
+              <div class="detail-item">
+                <span class="detail-label">Superficie</span>
+                <span class="detail-value">40 hectáreas</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Precio por ha</span>
+                <span class="detail-value highlight">USD 12.500</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Aptitud</span>
+                <span class="detail-value">Olivos y viñedos</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Riego</span>
+                <span class="detail-value">Manto y goteo</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Energía</span>
+                <span class="detail-value">Monofásica rural</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Accesos</span>
+                <span class="detail-value">Ruta Nacional 143</span>
+              </div>
+            </div>
+            <a href="finca.html" class="btn-primary"
+              >Ver información completa</a
+            >
+          </div>
+          <div class="finca-image">
+            <!-- <span>Imagen Finca San Rafael</span> -->
+            <img class="finca-img" src="./public/finca2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finca 3 -->
+    <section class="finca-section">
+      <div class="container">
+        <div class="finca-content">
+          <div class="finca-image">
+            <!-- <span>Imagen Finca Valle de Uco</span> -->
+            <img class="finca-img" src="./public/finca1.jpg" alt="" />
+          </div>
+          <div class="finca-info">
+            <h3>Finca Valle de Uco</h3>
+            <p class="finca-location">Tupungato, Mendoza</p>
+            <p class="finca-description">
+              Terroir único en el corazón del Valle de Uco a 1.100 metros de
+              altura. Suelos aluvionales pedregosos ideales para vinos de ultra
+              premium con vista panorámica a la Cordillera de los Andes.
+              Microclima excepcional con amplitud térmica perfecta para Malbec
+              de altura.
+            </p>
+            <div class="finca-details">
+              <div class="detail-item">
+                <span class="detail-label">Superficie</span>
+                <span class="detail-value">15 hectáreas</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Precio por ha</span>
+                <span class="detail-value highlight">USD 22.000</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Aptitud</span>
+                <span class="detail-value">Viñedos premium</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Riego</span>
+                <span class="detail-value">Goteo de precisión</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Energía</span>
+                <span class="detail-value">Trifásica 380V</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Accesos</span>
+                <span class="detail-value">Camino consolidado</span>
+              </div>
+            </div>
+            <a href="finca.html" class="btn-primary"
+              >Ver información completa</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finca 4 -->
+    <section class="finca-section">
+      <div class="container">
+        <div class="finca-content">
+          <div class="finca-info">
+            <h3>Finca El Mirador</h3>
+            <p class="finca-location">Maipú, Mendoza</p>
+            <p class="finca-description">
+              Propiedad histórica de gran extensión con excepcional potencial de
+              desarrollo. Incluye casco colonial restaurable de 1890, galpones
+              industriales y amplias posibilidades para proyectos
+              agroindustriales o turismo rural. Ubicación privilegiada en zona
+              de alta valorización.
+            </p>
+            <div class="finca-details">
+              <div class="detail-item">
+                <span class="detail-label">Superficie</span>
+                <span class="detail-value">60 hectáreas</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Precio por ha</span>
+                <span class="detail-value highlight">USD 8.500</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Aptitud</span>
+                <span class="detail-value">Mixto agrícola</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Riego</span>
+                <span class="detail-value">Pozo y canales</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Energía</span>
+                <span class="detail-value">Trifásica industrial</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Accesos</span>
+                <span class="detail-value">Ruta Provincial</span>
+              </div>
+            </div>
+            <a href="finca.html" class="btn-primary"
+              >Ver información completa</a
+            >
+          </div>
+          <div class="finca-image">
+            <!-- <span>Imagen Finca El Mirador</span> -->
+            <img class="finca-img" src="./public/finca2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Asesor Section -->
+    <section class="asesor-section" id="sobre-mi">
+      <div class="container">
+        <h2>Experiencia y confianza</h2>
+        <p>
+          Más de 10 años conectando inversores con tierras productivas en
+          Mendoza y Cuyo
+        </p>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">✓</div>
+            <h4>Transparencia</h4>
+            <p>Información completa y verificada de cada propiedad</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📋</div>
+            <h4>Informes técnicos</h4>
+            <p>Análisis detallado de suelos, riego y potencial productivo</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <h4>Negociación segura</h4>
+            <p>Acompañamiento integral en todo el proceso de compra</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-content">
+          <h2>¿Interesado en una finca?</h2>
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required />
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Cuéntanos sobre tu interés en invertir en fincas..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Enviar consulta</button>
+          </form>
+          <a href="#" class="whatsapp-link"
+            >También podés escribir por WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        // Obtener datos del formulario
+        const formData = new FormData(event.target);
+        const nombre = formData.get("nombre");
+        const email = formData.get("email");
+        const telefono = formData.get("telefono");
+        const mensaje = formData.get("mensaje");
+
+        // Mostrar mensaje de confirmación
+        const button = event.target.querySelector("button");
+        const originalText = button.textContent;
+        button.textContent = "Consulta enviada ✓";
+        button.style.background = "#28a745";
+
+        // Resetear formulario
+        event.target.reset();
+
+        // Restaurar botón después de 3 segundos
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.background = "#800020";
+        }, 3000);
+      }
+
+      // Smooth scroll para navegación
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'990b40fcc43d8bbf',t:'MTc2MDgyNDI1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
