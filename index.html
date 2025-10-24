@@ -121,10 +121,12 @@
     >
       <nav class="max-w-6xl mx-auto px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <div class="text-2xl font-bold text-bordeaux">Fincas Mendoza</div>
-          <div class="hidden md:flex items-center space-x-8 ">
+          <a href="/" class="text-2xl font-bold text-bordeaux"
+            >Fincas Mendoza</a
+          >
+          <div class="hidden md:flex items-center space-x-8">
             <a
-              href="#inicio"
+              href="/"
               class="text-bordeaux font-semibold"
               >Inicio</a
             >
@@ -134,7 +136,7 @@
               >Propiedades</a
             >
             <a
-              href="#contacto"
+              href="/contacto.html"
               class="text-gray-600 hover:text-bordeaux transition-colors"
               >Contacto</a
             >
@@ -143,6 +145,53 @@
               target="_blank"
               rel="noopener noreferrer"
               class="bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors"
+            >
+              WhatsApp
+            </a>
+          </div>
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile menu -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden bg-white border-t border-gray-100"
+        >
+          <div class="px-6 py-4 space-y-4">
+            <a
+              href="/"
+              class="block text-bordeaux font-semibold"
+              >Inicio</a
+            >
+            <a
+              href="/propiedades.html"
+              class="block text-gray-600 hover:text-bordeaux transition-colors"
+              >Propiedades</a
+            >
+            <a
+              href="/contacto.html"
+              class="block text-gray-600 hover:text-bordeaux transition-colors"
+              >Contacto</a
+            >
+            <a
+              href="https://wa.me/5492614123456"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors text-center"
             >
               WhatsApp
             </a>
@@ -187,7 +236,7 @@
 
           <div class="flex flex-col sm:flex-row gap-6 justify-center">
             <a
-              href="#propiedades"
+              href="/propiedades.html"
               class="bg-bordeaux text-white px-8 py-4 rounded-lg text-lg hover:bg-bordeaux-light transition-colors font-semibold"
             >
               Ver propiedades disponibles
@@ -832,6 +881,12 @@
           }
         });
       });
+
+      // Mobile menu functionality
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
     </script>
     
     <script>
