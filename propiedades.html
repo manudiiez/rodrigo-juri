@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fincas en Venta - Mendoza | Fincas Mendoza</title>
+    <meta
+      name="description"
+      content="Encuentra la finca perfecta en Mendoza. Filtros avanzados por ubicación, precio, características técnicas y productividad."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bordeaux: #800020;
+        --bordeaux-light: #a0002a;
+        --bordeaux-dark: #600018;
+      }
+
+      .text-bordeaux {
+        color: var(--bordeaux);
+      }
+      .bg-bordeaux {
+        background-color: var(--bordeaux);
+      }
+      .border-bordeaux {
+        border-color: var(--bordeaux);
+      }
+      .hover\:bg-bordeaux:hover {
+        background-color: var(--bordeaux);
+      }
+      .hover\:bg-bordeaux-light:hover {
+        background-color: var(--bordeaux-light);
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+      }
+
+      .filter-section {
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .filter-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .range-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 6px;
+        background: #e5e7eb;
+        border-radius: 3px;
+        outline: none;
+      }
+
+      .range-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: var(--bordeaux);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .range-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: var(--bordeaux);
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50"
+    >
+      <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="/" class="text-2xl font-bold text-bordeaux"
+            >Fincas Mendoza</a
+          >
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-gray-600 hover:text-bordeaux transition-colors"
+              >Inicio</a
+            >
+            <a href="/propiedades.html" class="text-bordeaux font-semibold">Propiedades</a>
+            <a
+              href="/contacto"
+              class="text-gray-600 hover:text-bordeaux transition-colors"
+              >Contacto</a
+            >
+            <a
+              href="https://wa.me/5492614123456"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors"
+            >
+              WhatsApp
+            </a>
+          </div>
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile menu -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden bg-white border-t border-gray-100"
+        >
+          <div class="px-6 py-4 space-y-4">
+            <a
+              href="/"
+              class="block text-gray-600 hover:text-bordeaux transition-colors"
+              >Inicio</a
+            >
+            <a href="/propiedades.html" class="block text-bordeaux font-semibold"
+              >Fincas</a
+            >
+            <a
+              href="/servicios"
+              class="block text-gray-600 hover:text-bordeaux transition-colors"
+              >Servicios</a
+            >
+            <a
+              href="/contacto"
+              class="block text-gray-600 hover:text-bordeaux transition-colors"
+              >Contacto</a
+            >
+            <a
+              href="https://wa.me/5492614123456"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-bordeaux text-white px-6 py-2 rounded-lg hover:bg-bordeaux-light transition-colors text-center"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-8 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1 class="text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+            Fincas en Venta
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Encuentra la propiedad rural perfecta en Mendoza con nuestros
+            filtros avanzados
+          </p>
+          <div class="bg-bordeaux text-white px-6 py-3 rounded-lg inline-block">
+            <span id="resultCount">12</span> fincas disponibles
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 pb-16">
+      <div class="flex gap-8">
+        <!-- Filtros Sidebar (Desktop) -->
+        <div
+          id="filtersSidebar"
+          class="hidden lg:block w-80 flex-shrink-0 transition-all duration-300"
+        >
+          <div class="bg-white p-6 rounded-2xl shadow-sm sticky top-24">
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="text-xl font-bold text-gray-900">Filtros</h2>
+              <div class="flex gap-2">
+                <button
+                  onclick="toggleFilters()"
+                  class="text-bordeaux text-sm hover:underline"
+                >
+                  Ocultar
+                </button>
+                <button
+                  onclick="clearAllFilters()"
+                  class="text-bordeaux text-sm hover:underline"
+                >
+                  Limpiar
+                </button>
+              </div>
+            </div>
+
+            <!-- Ubicación y Precio -->
+            <div class="filter-section">
+              <h3 class="font-semibold text-gray-900 mb-4">
+                Ubicación y Precio
+              </h3>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Departamento</label
+                >
+                <select
+                  id="departamento"
+                  class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux focus:border-transparent"
+                >
+                  <option value="">Todos</option>
+                  <option value="lujan">Luján de Cuyo</option>
+                  <option value="maipu">Maipú</option>
+                  <option value="tupungato">Tupungato</option>
+                  <option value="san-martin">San Martín</option>
+                  <option value="rivadavia">Rivadavia</option>
+                  <option value="junin">Junín</option>
+                  <option value="san-rafael">San Rafael</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                  Precio por hectárea: USD
+                  <span id="priceValue">5.000 - 50.000</span>
+                </label>
+                <div class="flex space-x-2">
+                  <input
+                    type="range"
+                    id="priceMin"
+                    min="5000"
+                    max="50000"
+                    value="5000"
+                    step="1000"
+                    class="range-slider flex-1"
+                    oninput="updatePriceRange()"
+                  />
+                  <input
+                    type="range"
+                    id="priceMax"
+                    min="5000"
+                    max="50000"
+                    value="50000"
+                    step="1000"
+                    class="range-slider flex-1"
+                    oninput="updatePriceRange()"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                  Superficie: <span id="areaValue">10 - 200</span> ha
+                </label>
+                <div class="flex space-x-2">
+                  <input
+                    type="range"
+                    id="areaMin"
+                    min="10"
+                    max="200"
+                    value="10"
+                    step="5"
+                    class="range-slider flex-1"
+                    oninput="updateAreaRange()"
+                  />
+                  <input
+                    type="range"
+                    id="areaMax"
+                    min="10"
+                    max="200"
+                    value="200"
+                    step="5"
+                    class="range-slider flex-1"
+                    oninput="updateAreaRange()"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Características Técnicas -->
+            <div class="filter-section">
+              <h3 class="font-semibold text-gray-900 mb-4">
+                Características Técnicas
+              </h3>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Tipo de suelo</label
+                >
+                <select
+                  id="tipoSuelo"
+                  class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux focus:border-transparent"
+                >
+                  <option value="">Todos</option>
+                  <option value="franco">Franco</option>
+                  <option value="franco-arcilloso">Franco-arcilloso</option>
+                  <option value="franco-arenoso">Franco-arenoso</option>
+                  <option value="arcilloso">Arcilloso</option>
+                  <option value="arenoso">Arenoso</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >pH del suelo</label
+                >
+                <select
+                  id="phSuelo"
+                  class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux focus:border-transparent"
+                >
+                  <option value="">Todos</option>
+                  <option value="acido">Ácido (< 6.5)</option>
+                  <option value="neutro">Neutro (6.5 - 7.5)</option>
+                  <option value="alcalino">Alcalino (> 7.5)</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Sistema de riego</label
+                >
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="riego-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="goteo"
+                    />
+                    <span class="ml-2 text-sm">Goteo</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="riego-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="aspersion"
+                    />
+                    <span class="ml-2 text-sm">Aspersión</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="riego-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="surco"
+                    />
+                    <span class="ml-2 text-sm">Por surco</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="riego-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="manto"
+                    />
+                    <span class="ml-2 text-sm">Por manto</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Tipo de energía</label
+                >
+                <select
+                  id="tipoEnergia"
+                  class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux focus:border-transparent"
+                >
+                  <option value="">Todos</option>
+                  <option value="trifasica">Trifásica</option>
+                  <option value="monofasica">Monofásica</option>
+                  <option value="sin-energia">Sin energía</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Productividad -->
+            <div class="filter-section">
+              <h3 class="font-semibold text-gray-900 mb-4">Productividad</h3>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Cultivos actuales</label
+                >
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="cultivo-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="vinedos"
+                    />
+                    <span class="ml-2 text-sm">Viñedos</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="cultivo-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="olivos"
+                    />
+                    <span class="ml-2 text-sm">Olivos</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="cultivo-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="frutales"
+                    />
+                    <span class="ml-2 text-sm">Frutales</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="cultivo-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="sin-cultivo"
+                    />
+                    <span class="ml-2 text-sm">Sin cultivo</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                  Rendimiento:
+                  <span id="rendimientoValue">5.000 - 20.000</span> kg/ha
+                </label>
+                <div class="flex space-x-2">
+                  <input
+                    type="range"
+                    id="rendimientoMin"
+                    min="5000"
+                    max="20000"
+                    value="5000"
+                    step="1000"
+                    class="range-slider flex-1"
+                    oninput="updateRendimientoRange()"
+                  />
+                  <input
+                    type="range"
+                    id="rendimientoMax"
+                    min="5000"
+                    max="20000"
+                    value="20000"
+                    step="1000"
+                    class="range-slider flex-1"
+                    oninput="updateRendimientoRange()"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Edad de plantaciones</label
+                >
+                <select
+                  id="edadPlantacion"
+                  class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux focus:border-transparent"
+                >
+                  <option value="">Todas</option>
+                  <option value="nueva">Nueva (0-5 años)</option>
+                  <option value="joven">Joven (6-15 años)</option>
+                  <option value="adulta">Adulta (16-30 años)</option>
+                  <option value="vieja">Vieja (30+ años)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Servicios e Instalaciones -->
+            <div class="filter-section">
+              <h3 class="font-semibold text-gray-900 mb-4">
+                Servicios e Instalaciones
+              </h3>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Fuente de agua</label
+                >
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="agua-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="canal"
+                    />
+                    <span class="ml-2 text-sm">Canal de riego</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="agua-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="pozo"
+                    />
+                    <span class="ml-2 text-sm">Pozo</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="agua-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="rio"
+                    />
+                    <span class="ml-2 text-sm">Río</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Instalaciones</label
+                >
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="instalacion-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="casa"
+                    />
+                    <span class="ml-2 text-sm">Casa</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="instalacion-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="galpon"
+                    />
+                    <span class="ml-2 text-sm">Galpón</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="instalacion-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="sala-riego"
+                    />
+                    <span class="ml-2 text-sm">Sala de riego</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="instalacion-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="cercos"
+                    />
+                    <span class="ml-2 text-sm">Cercos perimetrales</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Estado legal</label
+                >
+                <div class="space-y-2">
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="legal-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="escritura"
+                    />
+                    <span class="ml-2 text-sm">Escritura al día</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="legal-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="apto-credito"
+                    />
+                    <span class="ml-2 text-sm">Apto crédito</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input
+                      type="checkbox"
+                      class="legal-filter rounded border-gray-300 text-bordeaux focus:ring-bordeaux"
+                      value="libre-deudas"
+                    />
+                    <span class="ml-2 text-sm">Libre de deudas</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listado de Fincas -->
+        <div class="flex-1">
+          <!-- Mobile filters button -->
+          <div class="lg:hidden mb-6">
+            <button
+              onclick="openFiltersModal()"
+              class="bg-bordeaux text-white px-4 py-2 rounded-lg hover:bg-bordeaux-light transition-colors flex items-center gap-2"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"
+                ></path>
+              </svg>
+              Filtros
+            </button>
+          </div>
+
+          <!-- Show filters button (desktop, hidden by default) -->
+          <div id="showFiltersBtn" class="hidden lg:block mb-6">
+            <button
+              onclick="toggleFilters()"
+              class="bg-bordeaux text-white px-4 py-2 rounded-lg hover:bg-bordeaux-light transition-colors"
+            >
+              Mostrar filtros
+            </button>
+          </div>
+
+          <div id="fincasList" class="space-y-6">
+            <!-- Las fincas se generarán dinámicamente -->
+          </div>
+
+          <!-- Paginación -->
+          <div
+            id="pagination"
+            class="flex justify-center items-center gap-2 mt-8"
+          >
+            <!-- Se genera dinámicamente -->
+          </div>
+
+          <!-- No results message -->
+          <div id="noResults" class="hidden text-center py-12">
+            <div class="text-gray-400 text-6xl mb-4">🔍</div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              No se encontraron fincas
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Intenta ajustar los filtros para ver más resultados
+            </p>
+            <button
+              onclick="clearAllFilters()"
+              class="bg-bordeaux text-white px-6 py-3 rounded-lg hover:bg-bordeaux-light transition-colors"
+            >
+              Limpiar todos los filtros
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Filtros (Mobile) -->
+    <div
+      id="filtersModal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden lg:hidden"
+    >
+      <div class="flex items-end justify-center min-h-screen">
+        <div class="bg-white w-full max-h-[90vh] overflow-y-auto rounded-t-2xl">
+          <div
+            class="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center"
+          >
+            <h2 class="text-xl font-bold text-gray-900">Filtros</h2>
+            <div class="flex gap-3">
+              <button
+                onclick="clearAllFilters()"
+                class="text-bordeaux text-sm hover:underline"
+              >
+                Limpiar
+              </button>
+              <button
+                onclick="closeFiltersModal()"
+                class="text-gray-500 hover:text-gray-700"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4" id="mobileFiltersContent">
+            <!-- Los filtros se copiarán aquí dinámicamente -->
+          </div>
+
+          <div class="sticky bottom-0 bg-white border-t border-gray-200 p-4">
+            <button
+              onclick="closeFiltersModal()"
+              class="w-full bg-bordeaux text-white py-3 rounded-lg hover:bg-bordeaux-light transition-colors"
+            >
+              Aplicar filtros
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Flotante -->
+    <div class="fixed bottom-6 right-6 z-40">
+      <a
+        href="https://wa.me/5492614123456?text=Consulta%20sobre%20fincas%20disponibles"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+      >
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-2xl font-bold text-bordeaux mb-4">
+              Fincas Mendoza
+            </div>
+            <p class="text-gray-400">
+              Asesoría integral en propiedades rurales de Mendoza y Cuyo
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Servicios</h4>
+            <div class="space-y-2 text-gray-400">
+              <p>Venta de fincas</p>
+              <p>Asesoría técnica</p>
+              <p>Valuaciones</p>
+              <p>Gestión legal</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contacto</h4>
+            <div class="space-y-2 text-gray-400">
+              <p>+54 9 261 412-3456</p>
+              <p>martin@fincasmendoza.com</p>
+              <p>Mendoza, Argentina</p>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <div class="space-y-2 text-gray-400">
+              <p>CCPI MZA 12.345</p>
+              <p>Martillero Público</p>
+              <p>Ingeniero Agrónomo</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2024 Fincas Mendoza. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Sample data for fincas
+      const fincasData = [
+        {
+          id: 1,
+          nombre: "Finca Los Álamos",
+          departamento: "lujan",
+          superficie: 42,
+          precio: 18500,
+          precioTotal: 777000,
+          tipoSuelo: "franco-arcilloso",
+          ph: "neutro",
+          riego: ["goteo"],
+          energia: "trifasica",
+          cultivos: ["vinedos"],
+          rendimiento: 12000,
+          edad: "joven",
+          agua: ["canal"],
+          instalaciones: ["casa", "galpon", "sala-riego", "cercos"],
+          legal: ["escritura", "apto-credito", "libre-deudas"],
+          coordenadas: "-33.0162, -68.8751",
+          imagen: "🍇",
+        },
+        {
+          id: 2,
+          nombre: "Finca San Miguel",
+          departamento: "maipu",
+          superficie: 28,
+          precio: 22000,
+          precioTotal: 616000,
+          tipoSuelo: "franco",
+          ph: "neutro",
+          riego: ["goteo", "aspersion"],
+          energia: "trifasica",
+          cultivos: ["vinedos", "olivos"],
+          rendimiento: 14000,
+          edad: "adulta",
+          agua: ["canal", "pozo"],
+          instalaciones: ["casa", "galpon", "cercos"],
+          legal: ["escritura", "apto-credito"],
+          coordenadas: "-33.0089, -68.7892",
+          imagen: "🌿",
+        },
+        {
+          id: 3,
+          nombre: "Finca El Paraíso",
+          departamento: "tupungato",
+          superficie: 65,
+          precio: 15000,
+          precioTotal: 975000,
+          tipoSuelo: "franco-arenoso",
+          ph: "alcalino",
+          riego: ["goteo"],
+          energia: "trifasica",
+          cultivos: ["vinedos"],
+          rendimiento: 10000,
+          edad: "nueva",
+          agua: ["rio"],
+          instalaciones: ["casa", "galpon", "sala-riego"],
+          legal: ["escritura", "libre-deudas"],
+          coordenadas: "-33.3667, -69.1500",
+          imagen: "🏔️",
+        },
+        {
+          id: 4,
+          nombre: "Finca La Esperanza",
+          departamento: "san-martin",
+          superficie: 35,
+          precio: 16500,
+          precioTotal: 577500,
+          tipoSuelo: "arcilloso",
+          ph: "neutro",
+          riego: ["aspersion"],
+          energia: "monofasica",
+          cultivos: ["olivos"],
+          rendimiento: 8000,
+          edad: "joven",
+          agua: ["canal"],
+          instalaciones: ["galpon", "cercos"],
+          legal: ["escritura"],
+          coordenadas: "-33.0833, -68.4667",
+          imagen: "🫒",
+        },
+        {
+          id: 5,
+          nombre: "Finca Vista Bella",
+          departamento: "lujan",
+          superficie: 18,
+          precio: 25000,
+          precioTotal: 450000,
+          tipoSuelo: "franco",
+          ph: "neutro",
+          riego: ["goteo"],
+          energia: "trifasica",
+          cultivos: ["vinedos"],
+          rendimiento: 15000,
+          edad: "joven",
+          agua: ["canal"],
+          instalaciones: ["casa", "sala-riego", "cercos"],
+          legal: ["escritura", "apto-credito", "libre-deudas"],
+          coordenadas: "-33.0245, -68.8634",
+          imagen: "🌄",
+        },
+        {
+          id: 6,
+          nombre: "Finca Los Nogales",
+          departamento: "rivadavia",
+          superficie: 52,
+          precio: 12000,
+          precioTotal: 624000,
+          tipoSuelo: "franco-arcilloso",
+          ph: "acido",
+          riego: ["surco"],
+          energia: "monofasica",
+          cultivos: ["frutales"],
+          rendimiento: 18000,
+          edad: "adulta",
+          agua: ["canal"],
+          instalaciones: ["casa", "galpon"],
+          legal: ["escritura", "libre-deudas"],
+          coordenadas: "-33.2000, -68.4500",
+          imagen: "🌰",
+        },
+        {
+          id: 7,
+          nombre: "Finca El Roble",
+          departamento: "junin",
+          superficie: 75,
+          precio: 11000,
+          precioTotal: 825000,
+          tipoSuelo: "arenoso",
+          ph: "neutro",
+          riego: ["manto"],
+          energia: "sin-energia",
+          cultivos: ["sin-cultivo"],
+          rendimiento: 0,
+          edad: "",
+          agua: ["rio"],
+          instalaciones: ["cercos"],
+          legal: ["escritura"],
+          coordenadas: "-33.1333, -68.4833",
+          imagen: "🌳",
+        },
+        {
+          id: 8,
+          nombre: "Finca Santa Rosa",
+          departamento: "san-rafael",
+          superficie: 38,
+          precio: 14000,
+          precioTotal: 532000,
+          tipoSuelo: "franco",
+          ph: "neutro",
+          riego: ["goteo"],
+          energia: "trifasica",
+          cultivos: ["vinedos", "olivos"],
+          rendimiento: 11000,
+          edad: "joven",
+          agua: ["pozo"],
+          instalaciones: ["casa", "galpon", "sala-riego"],
+          legal: ["escritura", "apto-credito"],
+          coordenadas: "-34.6167, -68.3333",
+          imagen: "🌹",
+        },
+        {
+          id: 9,
+          nombre: "Finca Los Cerezos",
+          departamento: "tupungato",
+          superficie: 22,
+          precio: 20000,
+          precioTotal: 440000,
+          tipoSuelo: "franco-arenoso",
+          ph: "neutro",
+          riego: ["goteo"],
+          energia: "trifasica",
+          cultivos: ["frutales"],
+          rendimiento: 16000,
+          edad: "nueva",
+          agua: ["canal"],
+          instalaciones: ["casa", "cercos"],
+          legal: ["escritura", "apto-credito", "libre-deudas"],
+          coordenadas: "-33.3500, -69.1200",
+          imagen: "🍒",
+        },
+        {
+          id: 10,
+          nombre: "Finca El Molino",
+          departamento: "maipu",
+          superficie: 45,
+          precio: 17000,
+          precioTotal: 765000,
+          tipoSuelo: "franco-arcilloso",
+          ph: "alcalino",
+          riego: ["aspersion", "goteo"],
+          energia: "trifasica",
+          cultivos: ["vinedos"],
+          rendimiento: 13000,
+          edad: "adulta",
+          agua: ["canal", "pozo"],
+          instalaciones: ["casa", "galpon", "sala-riego", "cercos"],
+          legal: ["escritura", "libre-deudas"],
+          coordenadas: "-33.0156, -68.7745",
+          imagen: "⚙️",
+        },
+        {
+          id: 11,
+          nombre: "Finca Bella Vista",
+          departamento: "lujan",
+          superficie: 31,
+          precio: 21000,
+          precioTotal: 651000,
+          tipoSuelo: "franco",
+          ph: "neutro",
+          riego: ["goteo"],
+          energia: "trifasica",
+          cultivos: ["vinedos"],
+          rendimiento: 14500,
+          edad: "joven",
+          agua: ["canal"],
+          instalaciones: ["casa", "sala-riego", "cercos"],
+          legal: ["escritura", "apto-credito"],
+          coordenadas: "-33.0298, -68.8567",
+          imagen: "👁️",
+        },
+        {
+          id: 12,
+          nombre: "Finca Los Sauces",
+          departamento: "san-martin",
+          superficie: 58,
+          precio: 13500,
+          precioTotal: 783000,
+          tipoSuelo: "arcilloso",
+          ph: "neutro",
+          riego: ["surco", "aspersion"],
+          energia: "monofasica",
+          cultivos: ["olivos", "frutales"],
+          rendimiento: 9500,
+          edad: "adulta",
+          agua: ["canal"],
+          instalaciones: ["galpon", "cercos"],
+          legal: ["escritura"],
+          coordenadas: "-33.0945, -68.4523",
+          imagen: "🌲",
+        },
+      ];
+
+      let filteredFincas = [...fincasData];
+      let currentPage = 1;
+      const itemsPerPage = 5;
+      let filtersVisible = true;
+
+      // Initialize page
+      document.addEventListener("DOMContentLoaded", function () {
+        renderFincas();
+        updateResultCount();
+        renderPagination();
+
+        // Add event listeners to all filters
+        addFilterEventListeners();
+      });
+
+      function addFilterEventListeners() {
+        // Select filters - use querySelectorAll to handle both desktop and mobile
+        const selects = [
+          "departamento",
+          "tipoSuelo",
+          "phSuelo",
+          "tipoEnergia",
+          "edadPlantacion",
+        ];
+        selects.forEach((id) => {
+          document.querySelectorAll(`#${id}`).forEach((element) => {
+            element.removeEventListener("change", applyFilters);
+            element.addEventListener("change", applyFilters);
+          });
+        });
+
+        // Checkbox filters
+        document
+          .querySelectorAll(
+            ".riego-filter, .cultivo-filter, .agua-filter, .instalacion-filter, .legal-filter"
+          )
+          .forEach((checkbox) => {
+            checkbox.removeEventListener("change", applyFilters);
+            checkbox.addEventListener("change", applyFilters);
+          });
+
+        // Range filters
+        const ranges = [
+          "priceMin",
+          "priceMax",
+          "areaMin",
+          "areaMax",
+          "rendimientoMin",
+          "rendimientoMax",
+        ];
+        ranges.forEach((id) => {
+          document.querySelectorAll(`#${id}`).forEach((element) => {
+            element.removeEventListener("input", handleRangeInput);
+            element.addEventListener("input", handleRangeInput);
+          });
+        });
+      }
+
+      function handleRangeInput(event) {
+        const id = event.target.id;
+        if (id.includes("price")) updatePriceRange();
+        else if (id.includes("area")) updateAreaRange();
+        else if (id.includes("rendimiento")) updateRendimientoRange();
+        applyFilters();
+      }
+
+      function updatePriceRange() {
+        const minElements = document.querySelectorAll("#priceMin");
+        const maxElements = document.querySelectorAll("#priceMax");
+        const valueElements = document.querySelectorAll("#priceValue");
+
+        if (minElements.length > 0 && maxElements.length > 0) {
+          const min = minElements[0].value;
+          const max = maxElements[0].value;
+          const displayText = `${parseInt(min).toLocaleString()} - ${parseInt(
+            max
+          ).toLocaleString()}`;
+
+          valueElements.forEach((element) => {
+            element.textContent = displayText;
+          });
+
+          // Sync values between desktop and mobile
+          minElements.forEach((element) => (element.value = min));
+          maxElements.forEach((element) => (element.value = max));
+        }
+      }
+
+      function updateAreaRange() {
+        const minElements = document.querySelectorAll("#areaMin");
+        const maxElements = document.querySelectorAll("#areaMax");
+        const valueElements = document.querySelectorAll("#areaValue");
+
+        if (minElements.length > 0 && maxElements.length > 0) {
+          const min = minElements[0].value;
+          const max = maxElements[0].value;
+          const displayText = `${min} - ${max}`;
+
+          valueElements.forEach((element) => {
+            element.textContent = displayText;
+          });
+
+          // Sync values between desktop and mobile
+          minElements.forEach((element) => (element.value = min));
+          maxElements.forEach((element) => (element.value = max));
+        }
+      }
+
+      function updateRendimientoRange() {
+        const minElements = document.querySelectorAll("#rendimientoMin");
+        const maxElements = document.querySelectorAll("#rendimientoMax");
+        const valueElements = document.querySelectorAll("#rendimientoValue");
+
+        if (minElements.length > 0 && maxElements.length > 0) {
+          const min = minElements[0].value;
+          const max = maxElements[0].value;
+          const displayText = `${parseInt(min).toLocaleString()} - ${parseInt(
+            max
+          ).toLocaleString()}`;
+
+          valueElements.forEach((element) => {
+            element.textContent = displayText;
+          });
+
+          // Sync values between desktop and mobile
+          minElements.forEach((element) => (element.value = min));
+          maxElements.forEach((element) => (element.value = max));
+        }
+      }
+
+      function applyFilters() {
+        const filters = {
+          departamento: document.getElementById("departamento").value,
+          priceMin: parseInt(document.getElementById("priceMin").value),
+          priceMax: parseInt(document.getElementById("priceMax").value),
+          areaMin: parseInt(document.getElementById("areaMin").value),
+          areaMax: parseInt(document.getElementById("areaMax").value),
+          tipoSuelo: document.getElementById("tipoSuelo").value,
+          phSuelo: document.getElementById("phSuelo").value,
+          tipoEnergia: document.getElementById("tipoEnergia").value,
+          edadPlantacion: document.getElementById("edadPlantacion").value,
+          rendimientoMin: parseInt(
+            document.getElementById("rendimientoMin").value
+          ),
+          rendimientoMax: parseInt(
+            document.getElementById("rendimientoMax").value
+          ),
+          riego: Array.from(
+            document.querySelectorAll(".riego-filter:checked")
+          ).map((cb) => cb.value),
+          cultivos: Array.from(
+            document.querySelectorAll(".cultivo-filter:checked")
+          ).map((cb) => cb.value),
+          agua: Array.from(
+            document.querySelectorAll(".agua-filter:checked")
+          ).map((cb) => cb.value),
+          instalaciones: Array.from(
+            document.querySelectorAll(".instalacion-filter:checked")
+          ).map((cb) => cb.value),
+          legal: Array.from(
+            document.querySelectorAll(".legal-filter:checked")
+          ).map((cb) => cb.value),
+        };
+
+        filteredFincas = fincasData.filter((finca) => {
+          // Departamento filter
+          if (
+            filters.departamento &&
+            finca.departamento !== filters.departamento
+          )
+            return false;
+
+          // Price filter
+          if (
+            finca.precio < filters.priceMin ||
+            finca.precio > filters.priceMax
+          )
+            return false;
+
+          // Area filter
+          if (
+            finca.superficie < filters.areaMin ||
+            finca.superficie > filters.areaMax
+          )
+            return false;
+
+          // Soil type filter
+          if (filters.tipoSuelo && finca.tipoSuelo !== filters.tipoSuelo)
+            return false;
+
+          // pH filter
+          if (filters.phSuelo && finca.ph !== filters.phSuelo) return false;
+
+          // Energy type filter
+          if (filters.tipoEnergia && finca.energia !== filters.tipoEnergia)
+            return false;
+
+          // Age filter
+          if (filters.edadPlantacion && finca.edad !== filters.edadPlantacion)
+            return false;
+
+          // Rendimiento filter
+          if (
+            finca.rendimiento < filters.rendimientoMin ||
+            finca.rendimiento > filters.rendimientoMax
+          )
+            return false;
+
+          // Checkbox filters
+          if (
+            filters.riego.length > 0 &&
+            !filters.riego.some((r) => finca.riego.includes(r))
+          )
+            return false;
+          if (
+            filters.cultivos.length > 0 &&
+            !filters.cultivos.some((c) => finca.cultivos.includes(c))
+          )
+            return false;
+          if (
+            filters.agua.length > 0 &&
+            !filters.agua.some((a) => finca.agua.includes(a))
+          )
+            return false;
+          if (
+            filters.instalaciones.length > 0 &&
+            !filters.instalaciones.some((i) => finca.instalaciones.includes(i))
+          )
+            return false;
+          if (
+            filters.legal.length > 0 &&
+            !filters.legal.some((l) => finca.legal.includes(l))
+          )
+            return false;
+
+          return true;
+        });
+
+        currentPage = 1; // Reset to first page when filters change
+        renderFincas();
+        updateResultCount();
+      }
+
+      function renderPagination() {
+        const pagination = document.getElementById("pagination");
+        const totalPages = Math.ceil(filteredFincas.length / itemsPerPage);
+
+        if (totalPages <= 1) {
+          pagination.innerHTML = "";
+          return;
+        }
+
+        let paginationHTML = "";
+
+        // Previous button
+        if (currentPage > 1) {
+          paginationHTML += `
+                    <button onclick="goToPage(${
+                      currentPage - 1
+                    })" class="px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+                        ‹ Anterior
+                    </button>
+                `;
+        }
+
+        // Page numbers
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+
+        if (startPage > 1) {
+          paginationHTML += `<button onclick="goToPage(1)" class="px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">1</button>`;
+          if (startPage > 2) {
+            paginationHTML += `<span class="px-3 py-2">...</span>`;
+          }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+          const isActive = i === currentPage;
+          paginationHTML += `
+                    <button onclick="goToPage(${i})" class="px-3 py-2 rounded-lg border transition-colors ${
+            isActive
+              ? "bg-bordeaux text-white border-bordeaux"
+              : "border-gray-300 hover:bg-gray-50"
+          }">
+                        ${i}
+                    </button>
+                `;
+        }
+
+        if (endPage < totalPages) {
+          if (endPage < totalPages - 1) {
+            paginationHTML += `<span class="px-3 py-2">...</span>`;
+          }
+          paginationHTML += `<button onclick="goToPage(${totalPages})" class="px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">${totalPages}</button>`;
+        }
+
+        // Next button
+        if (currentPage < totalPages) {
+          paginationHTML += `
+                    <button onclick="goToPage(${
+                      currentPage + 1
+                    })" class="px-3 py-2 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors">
+                        Siguiente ›
+                    </button>
+                `;
+        }
+
+        pagination.innerHTML = paginationHTML;
+      }
+
+      function goToPage(page) {
+        currentPage = page;
+        renderFincas();
+        // Scroll to top of results
+        document
+          .getElementById("fincasList")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function toggleFilters() {
+        const sidebar = document.getElementById("filtersSidebar");
+        const showBtn = document.getElementById("showFiltersBtn");
+
+        if (filtersVisible) {
+          sidebar.style.width = "0";
+          sidebar.style.overflow = "hidden";
+          showBtn.classList.remove("hidden");
+          filtersVisible = false;
+        } else {
+          sidebar.style.width = "320px";
+          sidebar.style.overflow = "visible";
+          showBtn.classList.add("hidden");
+          filtersVisible = true;
+        }
+      }
+
+      function openFiltersModal() {
+        const modal = document.getElementById("filtersModal");
+        const mobileContent = document.getElementById("mobileFiltersContent");
+        const desktopFilters = document.querySelector(
+          "#filtersSidebar .bg-white"
+        );
+
+        // Clone filters content to mobile modal
+        mobileContent.innerHTML = desktopFilters.innerHTML;
+
+        // Re-add event listeners to cloned elements
+        addFilterEventListeners();
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeFiltersModal() {
+        const modal = document.getElementById("filtersModal");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+
+        // Apply filters when closing modal
+        applyFilters();
+      }
+
+      function renderFincas() {
+        const container = document.getElementById("fincasList");
+        const noResults = document.getElementById("noResults");
+        const pagination = document.getElementById("pagination");
+
+        if (filteredFincas.length === 0) {
+          container.innerHTML = "";
+          pagination.innerHTML = "";
+          noResults.classList.remove("hidden");
+          return;
+        }
+
+        noResults.classList.add("hidden");
+
+        // Calculate pagination
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentFincas = filteredFincas.slice(startIndex, endIndex);
+
+        container.innerHTML = currentFincas
+          .map(
+            (finca) => `
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Imagen -->
+                        <div class="md:w-72 h-48 md:h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-5xl md:text-6xl flex-shrink-0">
+                            <img src="/public/finca1.jpg" alt="${finca.nombre}" class="w-full h-full object-cover object-center"/>
+                        </div>
+                        
+                        <!-- Información -->
+                        <div class="flex-1 p-4 md:p-6 lg:p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-2">${
+                                      finca.nombre
+                                    }</h3>
+                                    <p class="text-lg text-bordeaux font-semibold">${getDepartamentoName(
+                                      finca.departamento
+                                    )}, Mendoza</p>
+                                </div>
+                                <span class="bg-bordeaux text-white px-4 py-2 rounded-full text-lg font-bold">
+                                    ${finca.superficie} ha
+                                </span>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Excepcional propiedad con ${getCultivosName(
+                                  finca.cultivos
+                                ).toLowerCase()} en zona privilegiada. 
+                                Terroir único con suelos ${getSueloName(
+                                  finca.tipoSuelo
+                                ).toLowerCase()} y excelente exposición. 
+                                Ideal para inversión ${
+                                  finca.cultivos.includes("vinedos")
+                                    ? "vitivinícola"
+                                    : "agrícola"
+                                } premium.
+                            </p>
+                            
+                            <!-- Detalles técnicos -->
+                            <div class="flex flex-wrap gap-4 mb-6">
+                                <div class="flex justify-between py-2 border-b border-gray-100 flex-1 min-w-[200px]">
+                                    <span class="text-gray-600 font-medium whitespace-nowrap">Superficie</span>
+                                    <span class="font-bold whitespace-nowrap ml-2">${
+                                      finca.superficie
+                                    }&nbsp;hectáreas</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 flex-1 min-w-[200px]">
+                                    <span class="text-gray-600 font-medium whitespace-nowrap">Precio por ha</span>
+                                    <span class="font-bold text-bordeaux whitespace-nowrap ml-2">USD&nbsp;${finca.precio.toLocaleString()}</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 flex-1 min-w-[200px]">
+                                    <span class="text-gray-600 font-medium whitespace-nowrap">Aptitud</span>
+                                    <span class="font-bold whitespace-nowrap ml-2">${getCultivosName(
+                                      finca.cultivos
+                                    )}</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 flex-1 min-w-[200px]">
+                                    <span class="text-gray-600 font-medium whitespace-nowrap">Riego</span>
+                                    <span class="font-bold whitespace-nowrap ml-2">${getRiegoName(
+                                      finca.riego
+                                    )}</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 flex-1 min-w-[200px]">
+                                    <span class="text-gray-600 font-medium whitespace-nowrap">Energía</span>
+                                    <span class="font-bold whitespace-nowrap ml-2">${getEnergiaName(
+                                      finca.energia
+                                    )}</span>
+                                </div>
+                                <div class="flex justify-between py-2 border-b border-gray-100 flex-1 min-w-[200px]">
+                                    <span class="text-gray-600 font-medium whitespace-nowrap">Accesos</span>
+                                    <span class="font-bold whitespace-nowrap ml-2">Ruta&nbsp;pavimentada</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <a href="/finca.html" class="bg-bordeaux text-white px-6 py-3 rounded-lg hover:bg-bordeaux-light transition-colors font-semibold">
+                                    Ver información completa
+                                </a>
+                                <a href="https://wa.me/5492614123456?text=Consulta%20por%20${encodeURIComponent(
+                                  finca.nombre
+                                )}" 
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="border-2 border-bordeaux text-bordeaux px-6 py-3 rounded-lg hover:bg-bordeaux hover:text-white transition-colors font-semibold">
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+
+        renderPagination();
+      }
+
+      function updateResultCount() {
+        document.getElementById("resultCount").textContent =
+          filteredFincas.length;
+      }
+
+      function clearAllFilters() {
+        // Reset select filters
+        document.getElementById("departamento").value = "";
+        document.getElementById("tipoSuelo").value = "";
+        document.getElementById("phSuelo").value = "";
+        document.getElementById("tipoEnergia").value = "";
+        document.getElementById("edadPlantacion").value = "";
+
+        // Reset checkboxes
+        document
+          .querySelectorAll(
+            ".riego-filter, .cultivo-filter, .agua-filter, .instalacion-filter, .legal-filter"
+          )
+          .forEach((checkbox) => {
+            checkbox.checked = false;
+          });
+
+        // Reset ranges
+        document.getElementById("priceMin").value = 5000;
+        document.getElementById("priceMax").value = 50000;
+        document.getElementById("areaMin").value = 10;
+        document.getElementById("areaMax").value = 200;
+        document.getElementById("rendimientoMin").value = 5000;
+        document.getElementById("rendimientoMax").value = 20000;
+
+        // Update range displays
+        updatePriceRange();
+        updateAreaRange();
+        updateRendimientoRange();
+
+        // Apply filters (which will show all fincas)
+        applyFilters();
+      }
+
+      // Helper functions for display names
+      function getDepartamentoName(dept) {
+        const names = {
+          lujan: "Luján de Cuyo",
+          maipu: "Maipú",
+          tupungato: "Tupungato",
+          "san-martin": "San Martín",
+          rivadavia: "Rivadavia",
+          junin: "Junín",
+          "san-rafael": "San Rafael",
+        };
+        return names[dept] || dept;
+      }
+
+      function getCultivosName(cultivos) {
+        const names = {
+          vinedos: "Viñedos",
+          olivos: "Olivos",
+          frutales: "Frutales",
+          "sin-cultivo": "Sin cultivo",
+        };
+        return cultivos.map((c) => names[c] || c).join(", ");
+      }
+
+      function getSueloName(suelo) {
+        const names = {
+          franco: "Franco",
+          "franco-arcilloso": "Franco-arcilloso",
+          "franco-arenoso": "Franco-arenoso",
+          arcilloso: "Arcilloso",
+          arenoso: "Arenoso",
+        };
+        return names[suelo] || suelo;
+      }
+
+      function getRiegoName(riego) {
+        const names = {
+          goteo: "Goteo",
+          aspersion: "Aspersión",
+          surco: "Surco",
+          manto: "Manto",
+        };
+        return riego.map((r) => names[r] || r).join(", ");
+      }
+
+      function getEnergiaName(energia) {
+        const names = {
+          trifasica: "Trifásica",
+          monofasica: "Monofásica",
+          "sin-energia": "Sin energía",
+        };
+        return names[energia] || energia;
+      }
+
+      // Mobile menu functionality
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      // Initialize range displays
+      updatePriceRange();
+      updateAreaRange();
+      updateRendimientoRange();
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'993531250027988b',t:'MTc2MTI2NDAwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
